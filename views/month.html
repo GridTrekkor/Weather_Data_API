@@ -1,0 +1,110 @@
+<div layout="column" layout-fill="" layout-align="top center" class="mainDiv">
+
+    <md-content layout-padding="" class="monthYearSelector">
+        <form name="userForm">
+
+            <div layout="" layout-sm="column">
+
+                <md-input-container flex="">
+                    <label>Month</label>
+                    <md-select ng-model="month.monthInput" name="month.monthInput" required="">
+                        <md-option ng-repeat="month in month.monthNames" value="{{ $index + 1 }}">
+                            {{ month.monthName }}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+
+                <md-input-container flex="">
+                    <label>Year</label>
+                    <input name="month.yearInput" ng-model="month.yearInput" placeholder="2015" required=""
+                           ng-pattern="/^[0-9]{4}$/" md-maxlength="4" onclick="select()">
+                </md-input-container>
+                <md-button id="submitButton" class="md-raised md-primary" ng-click="month.showMonthYear()">Submit
+                </md-button>
+
+            </div>
+        </form>
+    </md-content>
+
+    <div id="chartAndTitle">
+        <div id="chartTitle">
+            {{ month.monthName }} {{ month.year }}
+        </div>
+
+        <div ng-if="month.showGraph">
+            <div fusioncharts
+                 id="monthChart"
+                 width="700"
+                 height="400"
+                 type="msline"
+                 chart="{{ month.attrs }}"
+                 categories="{{ month.categories }}"
+                 dataset="{{ month.dataset }}">
+            </div>
+
+            <div class="dataTable">
+                <table>
+                    <tr>
+                        <th>Day</th>
+                        <th>Hi</th>
+                        <th>Lo</th>
+                        <th>AvgHi</th>
+                        <th>AvgLo</th>
+                    </tr>
+                    <tr ng-repeat="avgHiTemp in month.avgHiArray track by $index">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ month.hiArray[$index] }}</td>
+                        <td>{{ month.loArray[$index] }}</td>
+                        <td>{{ month.avgHiArray[$index] }}</td>
+                        <td>{{ month.avgLoArray[$index] }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="displayDay">
+    <div class="day"></div>
+    <div class="monthYear"></div>
+    <div class="dayOfWeek"></div>
+    <table id="dayTable">
+        <tr>
+            <td class="dataLabel">High Temp</td>
+            <td class="hi"></td>
+        </tr>
+        <tr>
+            <td class="dataLabel">Low Temp</td>
+            <td class="lo"></td>
+        </tr>
+        <tr>
+            <td class="dataLabel">Avg High</td>
+            <td class="avgHi"></td>
+        </tr>
+        <tr>
+            <td class="dataLabel">Avg Low</td>
+            <td class="avgLo"></td>
+        </tr>
+        <tr>
+            <td class="dataLabel">Rec High</td>
+            <td class="hiMax"></td>
+            <td class="hiMaxYear"></td>
+        </tr>
+        <tr>
+            <td class="dataLabel">Rec Low</td>
+            <td class="loMin"></td>
+            <td class="loMinYear"></td>
+        </tr>
+        <tr>
+            <td class="dataLabel">Rec Low Max</td>
+            <td class="loMax"></td>
+            <td class="loMaxYear"></td>
+        </tr>
+        <tr>
+            <td class="dataLabel">Rec High Min</td>
+            <td class="hiMin"></td>
+            <td class="hiMinYear"></td>
+        </tr>
+    </table>
+</div>

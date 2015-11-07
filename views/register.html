@@ -1,0 +1,13 @@
+<div class="container">
+    <form role="form" action="/register" method="post" style="max-width: 600px;">
+        <div class="form-group"><input type="text" name="username" placeholder="Username" class="form-control" required>
+        </div>
+            <div class="form-group password"><input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+        </div>
+        <div class="form-group password"><input type="password" name="password2" id="password2" placeholder="Confirm Password" class="form-control" required>
+            <span id="passwordsMatch" style="padding-left:10px"></span>
+        </div>
+        <md-button class="md-raised md-primary passwordSubmitButton" type="submit" style="margin-top:25px">Submit</md-button>
+        <a href="/"><md-button class="md-raised md-primary cancelButton" type="submit">Cancel</md-button></a>
+    </form>
+</div>

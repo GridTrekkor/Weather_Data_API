@@ -1,0 +1,445 @@
+/* latin-ext */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/Ks_cVxiCiwUWVsFWFA3Bjn-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/oMMgfZMQthOryQo9n22dcuvvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+.ng-hide-add, .ng-hide-remove {
+    /* ensure visibility during the transition */
+    display: block !important;
+}
+
+md-sidenav {
+    background-color : #3D4C99;
+    box-shadow: 0 0 8px #AAA !important;
+    /*width : 200px !important;*/
+    min-width : 200px !important;
+    max-width : 200px !important;
+}
+
+input:-webkit-autofill { background-color: rgb(255, 255, 255) !important; } /*does not work*/
+
+/*.toolbardemoBasicUsage md-toolbar md-icon.md-default-theme {*/
+    /*color: white;*/
+/*}*/
+
+#mainContainer {
+    margin : 50px;
+    width : 1100px;
+}
+
+#logo {
+    background-image: url("/images/sunrise6.png");
+    background-size: 150px 93px;
+    background-repeat: no-repeat;
+    width : 150px;
+    height : 93px;
+    margin : 20px auto;
+    filter:         drop-shadow(0px 0px 10px #FFF );
+    -webkit-filter: drop-shadow(0px 0px 10px #FFF );
+}
+
+.apiContainer { padding-top : 24px; width : 600px; font-size : 16px; }
+
+.code {
+    border : 1px solid #777;
+    background-color : #EFEFEF;
+    padding : 2px 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family : "Courier New";
+    font-weight : bold;
+}
+.apiHeader {
+    font-size : 32px;
+    padding : 30px 0 15px 0;
+    color : #FF9664;
+    font-weight : 700;
+}
+.apiText { color : #000; text-align : justify; padding-bottom : 15px; }
+
+.greeting {
+    font-size : 22px;
+    color : #00699B;
+    padding-top : 24px;
+    font-weight : 300;
+    margin-bottom : 20px;
+}
+.date {
+    font-size : 38px;
+    font-weight : 700;
+    color : #FF9664;
+}
+
+#currentWeather {
+    width : 500px;
+    height : 250px;
+    border : 1px solid #BFEAFF;
+    border-radius : 10px;
+    padding : 0;
+    margin-top : 25px;
+}
+/*9B0069*/
+/*65A72A*/
+#temperature {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 400;
+    width: 34%;
+    /* height: 100%; */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding-left: 3%;
+    float: left;
+}
+
+#temperatureNumber {
+    color : #9B0069;
+    font-size : 62px;
+    font-weight : 900;
+}
+
+#conditions {
+    font-size : 28px;
+    font-weight : 300;
+    color : #65A72A;
+}
+
+.weatherType {
+    font-size: 22px;
+    font-weight: 300;
+    color: #00699B;
+    text-align: right;
+    float: right;
+    padding: 20px 20px 10px 0;
+}
+
+.weatherData {
+    font-size: 22px;
+    font-weight: 700;
+    color: #00699B;
+    padding-left: 15px;
+    float: right;
+    width: 140px;
+    text-align: left;
+}
+
+.currentWeatherTable {
+    width: 63%;
+    height: 100%;
+    padding-top: 8px;
+    float: right;
+}
+
+#chartAndTitle { width : 700px; }
+
+#chartTitle {
+    font-size : 34px;
+    font-weight : 700;
+    text-align : center;
+    height : 35px;
+    margin-bottom : 33px;
+    transition: 0.5s linear all;
+    color : #00699B;
+    opacity: 1;
+    text-shadow : 0 0 3px #999;
+}
+
+#monthChart {
+    box-shadow:0 0 8px #CCC;
+    width : 700px;
+    height : 400px;
+    /*float : left;*/
+    margin-bottom : 40px;
+}
+
+#yearChart {
+    box-shadow:0 0 8px #CCC;
+    width : 1200px;
+    height : 400px;
+    margin-bottom : 40px;
+}
+
+.Tooltip {
+    font-size : 18px;
+    font-weight : bold;
+    color : #FFFFFF;
+    padding : 10px;
+    width : 500px !important;
+    height : 500px !important;
+}
+
+#displayDay {
+    background-color : #FFF;
+    /*box-shadow:0 0 8px #CCC;*/
+    /*height : 400px;*/
+    width : 200px;
+    /*border : 1px solid #000;*/
+    text-align : center;
+    float : right;
+    display : none;
+    left : 840px;
+    top : 217px;
+    position: absolute;
+}
+
+#dayTable { margin : 6px 0 0 20px; }
+.day { font-size : 40px; color : #FF9664; font-weight: 700;  }
+.monthYear { font-size : 24px; color : #9B0069; font-weight : 700;  border-bottom: 1px solid #888; padding-bottom: 9px;}
+.dataLabel { font-size : 12px; text-align : right; color : #666; vertical-align: bottom; }
+.hi, .lo, .avgHi, .avgLo, .hiMax, .loMin, .loMax, .hiMin { padding : 5px 5px 0px 10px; font-size : 16px; font-weight : bold; text-align : left; vertical-align: bottom; }
+.hiMaxYear, .loMinYear, .loMaxYear, .hiMinYear { color : #666; font-size : 12px; vertical-align: bottom; }
+
+.mainDiv { width : 700px; }
+
+.topRightMenuContainer {
+    float : right;
+    margin : auto 20px;
+    height : 50px;
+    background-color: inherit;
+    line-height : 64px;
+    vertical-align: middle;
+}
+
+.topRightMenuButton {
+    background-color : #00699B !important;
+    font-weight : bold;
+    box-shadow : 0 0 5px #AAA !important;
+    height : 20px;
+    width : 60px;
+}
+
+.md-open-menu-container {
+    background-color: #FFF !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding : 10px 19px !important;
+}
+
+.topRightMenuContent {
+    background-color : #FFF !important;
+    color : #000 !important;
+    text-align : center;
+}
+
+.form-control {
+    padding: 6px 20px;
+    margin: 5px auto;
+    border : none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border:solid 1px #ccc;
+}
+
+.loginButton, .passwordSubmitButton {
+    color : #FFF;
+    background-color : #00F !important;
+    font-weight : bold;
+    box-shadow : 0 0 5px #AAA !important;
+    height : 20px;
+    width : 60px;
+}
+
+.logoffButton {
+    color : #FFF;
+    background-color : #070 !important;
+    font-weight : bold;
+    box-shadow : 0 0 5px #AAA !important;
+    height : 20px;
+    width : 60px;
+}
+
+.registerButton, .cancelButton {
+    color : #FFF;
+    background-color : #F00 !important;
+    font-weight : bold;
+    box-shadow : 0 0 5px #AAA !important;
+    height : 20px;
+    width : 60px;
+}
+
+.passwordsMatch { font-size : 10px; }
+.registerUsername, .registerPassword { transition: none !important; }
+
+.monthYearSelector {
+    opacity: 0.4;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+    overflow: inherit;
+}
+
+.monthYearSelector:hover { opacity: 1; }
+
+.dataTable, .monthYearSelector { width : 100%; }
+
+/* year table ******************************************************************************/
+.dataTableYear table {
+    border: 1px solid #000;
+    border-collapse: collapse;
+    width : 1px;
+    table-layout : fixed;
+    white-space: nowrap;
+    text-align : center;
+}
+
+.dataTableYear th, .dataTableYear td {
+    padding : 5px;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    font-family : "Courier New";
+    font-weight : bold;
+    width : 160px;
+}
+
+.dataTableYear th {
+    font-family : Roboto;
+    border-style: solid;
+    border-bottom: 2px solid #000;
+}
+
+.tableMonthName { text-align : left; padding-left : 30px; }
+
+/* end year table */
+
+.dataTable table {
+    width : 100%;
+    text-align : center;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.dataTable tr:hover { background: #EEE; }
+
+.dataTable tr:nth-child(odd) {
+    background: #EDF9FF;
+}
+
+.dataTable tr:nth-child(odd):hover {
+    background: #EEE;
+}
+
+.dataTable th {
+    /*padding : 10px;*/
+    border-bottom : 1px solid #000;
+    border-collapse:collapse;
+}
+
+.dataTable tr:first-child {
+    background-color: #FFF;
+}
+
+.dataTable tr:first-child:hover {
+    background-color: #FFF;
+}
+
+#submitButton {
+    background-color : #00699B;
+    font-weight : bold;
+    box-shadow : 0 0 5px #AAA !important;
+    height : 20px;
+    width : 60px;
+    margin-top : 15px;
+    opacity: 0.1;
+    transition: opacity .5s ease-out;
+    -moz-transition: opacity .5s ease-out;
+    -webkit-transition: opacity .5s ease-out;
+    -o-transition: opacity .5s ease-out;
+}
+
+#submitButton:hover {
+    background-color : #3E91B8;
+    opacity : 1;
+}
+
+.md-sidenav-left, .md-whiteframe-z2, .md-toolbar-tools {
+    background-color : #00699B;
+    font-weight: bold;
+    padding : 0 20px;
+    color : #FFF;
+    text-decoration : none;
+}
+
+.sideNavBottom {
+    position : absolute;
+    bottom : 20px;
+    left : 15px;
+    width : 150px;
+    padding : 10px;
+    text-align : center;
+}
+
+.clock { padding-bottom : 5px; }
+.loggedInAs { padding-top : 5px; }
+
+.md-toolbar-tools:hover { text-shadow : 0 0 15px #9AD; }
+
+.site-content-toolbar {
+    background: #f6f6f6 !important;
+    color: #202020 !important;
+    font-weight : 400;
+    font-size : 24px;
+    box-shadow : 0 0 5px #AAA;
+    opacity : 0.9 !important;
+    height : 64px;
+    /*z-index: 3;*/
+}
+
+.menuText{
+    margin-left : 32px;
+    line-height : 64px;
+    vertical-align: middle;
+}
+
+.accountInfo { color : #999; }
+
+.mainArea { padding : 20px 50px; }
+
+.dataTable, .monthYearSelector { width : 100%; }
+
+.dataTable table {
+    width : 100%;
+    text-align : center;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.dataTable tr:hover { background: #EEE; }
+.dataTable tr:nth-child(odd) { background: #EDF9FF; }
+.dataTable tr:nth-child(odd):hover { background: #EEE; }
+.dataTable tr:first-child { background-color: #FFF; }
+.dataTable tr:first-child:hover { background-color: #FFF; }
+.dataTable th {
+    border-bottom : 1px solid #000;
+    border-collapse:collapse;
+}

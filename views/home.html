@@ -1,0 +1,43 @@
+<div class="greeting">
+    today is<br />
+    <div class="date">
+        {{ home.CurrentDate | date: 'EEEE d MMMM yyyy' }}
+    </div>
+</div>
+
+<div id="currentWeather" ng-cloak="">
+
+    <div id="temperature">
+        <span id="temperatureNumber">&nbsp;{{ home.weather.temperature }}&deg;</span>
+            <br>
+        <img class="conditionsIcon" src="{{ home.weather.conditionsIcon }}" />
+            <br>
+        <span id="conditions">{{ home.weather.conditions | lowercase}}</span>
+    </div>
+
+    <div class="currentWeatherTable">
+            <div class="weatherType">humidity
+                <div class="weatherData">{{ home.weather.humidity }}</div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="weatherType">dew point
+                <div class="weatherData">{{ home.weather.dewPoint }}&deg;</div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="weatherType">wind
+                <div class="weatherData">{{ home.weather.windSpeed }} mph {{ home.weather.windDirection }}</div>
+            </div>
+
+            <div class="clearfix"></div>
+
+
+            <div class="weatherType">pressure
+                    <div class="weatherData">{{ home.weather.pressure }} {{ home.weather.pressureTrend }}</div>
+            </div>
+    </div>
+
+</div>

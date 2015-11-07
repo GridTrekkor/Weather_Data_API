@@ -1,0 +1,57 @@
+<div layout="column" layout-fill="" layout-align="top center" class="mainDiv" style="width:1200px">
+
+    <md-content layout-padding="" class="monthYearSelector" style="width:300px;">
+        <form name="userForm">
+            <div layout="" layout-sm="column">
+                <md-input-container flex="">
+                    <label>Year</label>
+                    <input name="year.yearInput" ng-model="year.yearInput" placeholder="2015" required=""
+                           ng-pattern="/^[0-9]{4}$/" md-maxlength="4" onclick="select()">
+                </md-input-container>
+                <md-button id="submitButton" class="md-raised md-primary" ng-click="year.showYear()">Submit</md-button>
+            </div>
+        </form>
+    </md-content>
+
+    <div id="chartAndTitle" style="width:1200px;text-align:center">
+        <div id="chartTitle">
+            {{ year.httpYear }}
+        </div>
+
+        <div ng-if="year.showGraph">
+            <div fusioncharts
+                 id="yearChart"
+                 width="1200"
+                 height="400"
+                 type="msline"
+                 chart="{{ year.attrs }}"
+                 categories="{{ year.categories }}"
+                 dataset="{{ year.dataset }}">
+            </div>
+
+            <div class="dataTableYear">
+                <table>
+                    <tr>
+                        <th>Month</th>
+                        <th bgcolor="#FF9999">Historical Avg Hi</th>
+                        <th bgcolor="#3399FF">Historical Avg Lo</th>
+                        <th bgcolor="#FFBBBB">{{ year.httpYear }} Average High</th>
+                        <th bgcolor="#66BBFF">{{ year.httpYear }} Average Low</th>
+                        <th bgcolor="#FFDDDD">Avg Hi Offset</th>
+                        <th bgcolor="#99DDFF">Avg Lo Offset</th>
+                    </tr>
+                    <tr ng-repeat="(key, value) in year.avgArray track by $index">
+                        <td class="tableMonthName">{{ $index + 1 }} {{ year.monthNames[key + 1] }}</td>
+                        <td class="yearData" bgcolor="#FF9999">{{ value.avg[0].hi }}</td>
+                        <td class="yearData" bgcolor="#3399FF">{{ value.avg[1].lo }}</td>
+                        <td class="yearData" bgcolor="#FFBBBB">{{ year.currentYearArray[$index].avg[0].hi }}</td>
+                        <td class="yearData" bgcolor="#66BBFF">{{ year.currentYearArray[$index].avg[1].lo }}</td>
+                        <td class="yearData" bgcolor="#FFDDDD">{{ year.currentYearArray[$index].avg[0].hi - value.avg[0].hi > 0 ? '+' : ''}}{{ year.currentYearArray[$index].avg[0].hi - value.avg[0].hi | number : 2 }}</td>
+                        <td class="yearData" bgcolor="#99DDFF">{{ year.currentYearArray[$index].avg[1].lo - value.avg[1].lo > 0 ? '+' : ''}}{{ year.currentYearArray[$index].avg[1].lo - value.avg[1].lo | number : 2 }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

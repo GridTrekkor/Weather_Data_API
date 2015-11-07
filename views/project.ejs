@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="weatherApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="/javascripts/angular.min.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-animate.min.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-route.min.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-aria.min.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-messages.min.js"></script>
+    <script type="text/javascript" src="/javascripts/angular-material.min.js"></script>
+
+    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/fusion/fusioncharts.js"></script>
+    <script type="text/javascript" src="/javascripts/fusion/angular-fusioncharts.min.js"></script>
+
+    <link rel="stylesheet" href="/stylesheets/angular-material.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900' rel='stylesheet' type='text/css'>
+
+    <!-- Local Sources -->
+    <link rel="stylesheet" href="/stylesheets/project.css">
+
+    <!-- Angular Routes --->
+    <script type="text/javascript" src="/javascripts/ngRoutes.js"></script>
+    <script type="text/javascript" src="/javascripts/client.js"></script>
+
+    <script src="/javascripts/ngRoutes/HomeViewController.js"></script>
+    <script src="/javascripts/ngRoutes/YearViewController.js"></script>
+    <script src="/javascripts/ngRoutes/MonthViewController.js"></script>
+    <script src="/javascripts/ngRoutes/APIViewController.js"></script>
+    <script src="/javascripts/ngRoutes/RegisterController.js"></script>
+
+    <base href="/">
+
+    <title>Weather</title>
+
+</head>
+<body ng-controller="TopViewController as top" class="layout-row" style>
+<section layout="row" flex="">
+
+    <md-sidenav ng-cloak="" class="site-sidenav md-sidenav-left md-whiteframe-z2 md-locked-open md-closed" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+        <a id="logo" href="/"></a>
+        <a class="md-toolbar-tools" href="/">Home</a>
+        <a class="md-toolbar-tools" href="/year">Year View</a>
+        <a class="md-toolbar-tools" href="/month">Month View</a>
+        <a class="md-toolbar-tools" href="/api">API Spec</a>
+        <div class="sideNavBottom">
+            <div class="clock">{{ top.clock }}</div>
+            <div class="loggedInAs" style="border-top:1px solid #FFF;"><% if (user) { %><span style="font-weight:normal">logged in as</span><br /><span id="loggedInUsername"><%= user.username %></span><% } else { %><span style="font-weight:normal">not logged in</span><% } %></div>
+        </div>
+    </md-sidenav>
+
+    <div ng-cloak="" tabindex="-1" role="main" class="layout-column flex">
+        <md-toolbar class="site-content-toolbar">
+
+            <div class="menuText">
+                <span>{{ top.data.title }}</span>
+                <div class="topRightMenuContainer" layout-align="center center" layout="column">
+                    <md-menu style="padding:4px 0">
+                        <md-button class="topRightMenuButton" aria-label="Account Menu" ng-click="top.openMenu($mdOpenMenu, $event)">
+                            ACCOUNT
+                        </md-button>
+                        <md-menu-content class="topRightMenuContent">
+                            <% if (!user) { %>
+                            <form role="form" action="/login" method="post">
+                                <div>
+                                    <input type="text" placeholder="Username" name="username" class="form-control" value="" required="">
+                                </div>
+                                <div>
+                                    <input type="password" placeholder="Password" name="password" class="form-control" value="" required="">
+                                </div>
+                                <div>
+                                    <md-button type="submit" class="loginButton">Log In</md-button>
+                                    <a href="/register"><md-button class="registerButton">Register</md-button></a>
+                                </div>
+                                <% } else { %>
+                                <div style="color:#000">
+                                    logged in as: <%= user.username %>
+                                </div>
+                                <div>
+                                    <a href="/logout" target="_self"><md-button class="logoffButton">Log Off</md-button></a>
+                                </div>
+                                <% } %>
+                            </form>
+                        </md-menu-content>
+                    </md-menu>
+                </div>
+            </div>
+        </md-toolbar>
+
+
+        <md-content flex="" layout-padding="" class="mainArea">
+            <ng-view>
+                <!-- view content here -->
+            </ng-view>
+        </md-content>
+
+    </div>
+
+</section>
+
+</body>
+</html>

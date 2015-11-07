@@ -1,0 +1,52 @@
+<div class="apiContainer">
+
+    <div ng-if="api.userdata.user.username && api.userdata.user.apiKey">
+
+        <div>You are logged in as <span class="code">{{ api.userdata.user.username }}</span></div>
+        <br /><br />
+        <div>Your API key is <span class="code">{{ api.userdata.user.apiKey }}</span></div>
+
+    </div>
+
+    <div class="apiHeader">Overview</div>
+    <div class="apiText">
+        The weather data API consists of various routers built on the Express/Node.js framework.  Data are stored as documents in MongoDB.
+        Currently, data consist of daily high and low temperatures in Minneapolis dating to 1 January 1891.
+        <br /><br />
+        API access requires a key.  Your key is listed above if you are signed into the system.  Please register an account to generate an API key.
+        <br /><br />
+        There are several options for accessing data as outlined in the examples below.
+    </div>
+
+    <div class="apiHeader">Year Data</div>
+    <div class="apiText">
+        Returns daily data for the year specified.
+    </div>
+    <span class="code">{{ api.url }}/weather/api/{{ api.userdata.user.apiKey }}/years/1985</span>
+
+    <div class="apiHeader">Month Data</div>
+    <div class="apiText">
+        Returns daily data for all days, for all years, for month specified.
+    </div>
+    <span class="code">{{ api.url }}/weather/api/{{ api.userdata.user.apiKey }}/months/10</span>
+
+    <div class="apiHeader">Month/Day Data</div>
+    <div class="apiText">
+        Returns data for specified day in specified month for all years.
+    </div>
+    <span class="code">{{ api.url }}/weather/api/{{ api.userdata.user.apiKey }}/months/10/days/26</span>
+
+    <div class="apiHeader">Year/Month Data</div>
+    <div class="apiText">
+        Returns daily data for specified month in specified year.
+    </div>
+    <span class="code">{{ api.url }}/weather/api/{{ api.userdata.user.apiKey }}/years/1985/months/10</span>
+
+    <div class="apiHeader">Year/Month/Day Data</div>
+    <div class="apiText">
+        Returns data for specified day in specified month in specified year.
+    </div>
+    <span class="code">{{ api.url }}/weather/api/{{ api.userdata.user.apiKey }}/years/1985/months/10/days/26</span>
+
+</div>
+
