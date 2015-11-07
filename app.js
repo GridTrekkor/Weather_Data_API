@@ -14,7 +14,8 @@ var api = require('./routes/api');
 
 var app = express();
 
-var mongoURI = "mongodb://localhost:27017/Weather";
+//var mongoURI = "mongodb://localhost:27017/Weather";
+var mongoURI = "mongodb://heroku_7z4qwxc4:tjira0uiejbqu4julqm4mehesn@ds051334.mongolab.com:51334/heroku_7z4qwxc4";
 var mongoDB = mongoose.connect(mongoURI).connection;
 mongoDB.once('open', function () {
     console.log("[" + new Date() + "] Connected to Mongo");
