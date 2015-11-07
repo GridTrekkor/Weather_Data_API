@@ -4,6 +4,6 @@ This solo project for Prime Digital Academy is a weather data application and pu
 
 Yearly and monthly graphs and charts are provided, as well as the ability to click a date in the month graph and obtain a detailed daily record.  
 
-Additionally, account management is provided by the Passport NPM package.  Front-end frameworks are Angular JS and jQuery.
+Additionally, account management is provided by the Passport NPM package.  Line charts are built on FusionCharts.  Front-end frameworks are Angular JS and jQuery.
 
 http://glacial-falls-5718.herokuapp.com/
