@@ -19,6 +19,7 @@ app.controller('MonthViewController', function ($http, MenuTitle) {
 
         month.httpMonth = parseInt(month.monthInput);
         month.httpYear = month.yearInput;
+        month.showSpinner = true;
 
         // update top nav title
         if (month.httpMonth && month.httpYear)  MenuTitle.updateTitle('Month View: ' + monthNames[month.httpMonth] + " " + month.httpYear);
@@ -28,6 +29,7 @@ app.controller('MonthViewController', function ($http, MenuTitle) {
                 $http.get('weather/api/getRecords/' + month.httpMonth + '/').then(function (data3) {
                     drawMonth(data, data2, data3);
                     month.showGraph = true;
+                    month.showSpinner = false;
                 });
             });
         });

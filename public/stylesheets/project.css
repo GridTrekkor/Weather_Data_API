@@ -444,3 +444,9 @@ input:-webkit-autofill { background-color: rgb(255, 255, 255) !important; } /*do
     border-bottom : 1px solid #000;
     border-collapse:collapse;
 }
+
+.spinner {
+    height : 30px;
+    width : 30px;
+    margin: 18px 0;
+}

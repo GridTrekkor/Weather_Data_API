@@ -17,6 +17,7 @@ app.controller('YearViewController', function($http, MenuTitle) {
 
     year.showYear = function() {
         year.httpYear = year.yearInput;
+        year.showSpinner = true;
         // update menu title based on year input
         if (year.httpYear) MenuTitle.updateTitle('Year View: ' + year.httpYear);
 
@@ -25,6 +26,7 @@ app.controller('YearViewController', function($http, MenuTitle) {
                 drawYear(data);
                 year.currentYearArray = data2.data;
                 year.showGraph = true;
+                year.showSpinner = false;
             });
         });
 
