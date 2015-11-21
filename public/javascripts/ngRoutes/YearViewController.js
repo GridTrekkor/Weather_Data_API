@@ -14,7 +14,7 @@ app.controller('YearViewController', function($http, MenuTitle) {
     year.dataset = [];
 
     year.avgArray = [{Month:1,avg:[{hi:"22.05"},{lo:"5.18"}]},{Month:2,avg:[{hi:"26.22"},{lo:"9.20"}]},{Month:3,avg:[{hi:"38.93"},{lo:"22.18"}]},{Month:4,avg:[{hi:"56.04"},{lo:"36.49"}]},{Month:5,avg:[{hi:"68.54"},{lo:"48.19"}]},{Month:6,avg:[{hi:"77.99"},{lo:"58.30"}]},{Month:7,avg:[{hi:"83.29"},{lo:"63.41"}]},{Month:8,avg:[{hi:"80.63"},{lo:"61.00"}]},{Month:9,avg:[{hi:"71.64"},{lo:"51.90"}]},{Month:10,avg:[{hi:"58.95"},{lo:"40.30"}]},{Month:11,avg:[{hi:"40.73"},{lo:"25.59"}]},{Month:12,avg:[{hi:"26.98"},{lo:"12.08"}]}];
-    console.log(year.avgArray);
+    //console.log(year.avgArray);
     year.monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     year.showYear = function() {
@@ -61,7 +61,7 @@ app.controller('YearViewController', function($http, MenuTitle) {
                 year.dataset[1].data.push({"value" : data.data[k].Lo.toString()});
                 k++;
             }
-            console.log(year.dataset[0]);
+            //console.log(year.dataset[0]);
 
             year.attrs = {
                 "caption": "",

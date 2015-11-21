@@ -127,7 +127,7 @@ app.controller('MonthViewController', function ($http, MenuTitle) {
                 month.loArray.push(data.data[k].Lo);
                 k++;
             }
-            console.log(month.dataset[2]);
+            //console.log(month.dataset[2]);
 
             //console.log("max = " + maxValue + " || min = " + minValue);
 

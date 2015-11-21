@@ -9,16 +9,15 @@
                            ng-pattern="/^[0-9]{4}$/" md-maxlength="4" onclick="select()">
                 </md-input-container>
                 <md-button id="submitButton" class="md-raised md-primary" ng-click="year.showYear()">Submit</md-button>
-                <img class="spinner" ng-style="{opacity : year.showSpinner ? 1 : 0}" src="/images/default.gif" />
             </div>
         </form>
     </md-content>
 
     <div id="chartAndTitle" style="width:1200px;text-align:center">
-        <div ng-if="year.showYearText" id="chartTitle">
-            {{ year.yearText }}
+        <img class="spinner" ng-if="year.showSpinner" height="30" width="30" src="/images/default.gif" />
+        <div id="chartTitle">
+            {{ year.httpYear }}
         </div>
-
 
         <div ng-if="year.showGraph">
             <div fusioncharts
