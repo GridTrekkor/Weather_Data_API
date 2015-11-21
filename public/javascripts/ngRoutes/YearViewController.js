@@ -5,6 +5,8 @@ app.controller('YearViewController', function($http, MenuTitle) {
 
     // do not show the chart/graph until data is submitted
     year.showGraph = false;
+    year.showSpinner = false;
+    year.showYearText = false;
 
     // initial chart vars
     year.attrs = {};
@@ -16,8 +18,11 @@ app.controller('YearViewController', function($http, MenuTitle) {
     year.monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
     year.showYear = function() {
+        year.showYearText = false;
         year.httpYear = year.yearInput;
+        year.yearText = "";
         year.showSpinner = true;
+        year.showGraph = false;
         // update menu title based on year input
         if (year.httpYear) MenuTitle.updateTitle('Year View: ' + year.httpYear);
 
@@ -27,6 +32,8 @@ app.controller('YearViewController', function($http, MenuTitle) {
                 year.currentYearArray = data2.data;
                 year.showGraph = true;
                 year.showSpinner = false;
+                year.yearText = year.httpYear;
+                year.showYearText = true;
             });
         });
 
@@ -88,7 +95,7 @@ app.controller('YearViewController', function($http, MenuTitle) {
                 "labelDisplay" : "wrap",
                 "showZeroPlaneValue" : "0",
                 "anchorradius": "0",
-                "toolTipBgColor": "00699B",
+                "toolTipBgColor": "FFFFFF",
                 "toolTipBgAlpha": "90",
                 "showToolTipShadow" : "1",
                 "palettecolors": "#FF0000,#0000FF,#FFE6E6,#E6E6FF,#FF0000,#0000FF,#6baa01,#583e78",

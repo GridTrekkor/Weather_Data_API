@@ -14,10 +14,10 @@
     </md-content>
 
     <div id="chartAndTitle" style="width:1200px;text-align:center">
-        <img class="spinner" ng-if="year.showSpinner" height="30" width="30" src="/images/default.gif" />
-        <div ng-if="!year.showSpinner" id="chartTitle">
-            {{ year.httpYear }}
+        <div ng-if="year.showYearText" id="chartTitle">
+            {{ year.yearText }}
         </div>
+        <img class="spinner" ng-if="year.showSpinner" height="30" width="30" src="/images/default.gif" />
 
         <div ng-if="year.showGraph">
             <div fusioncharts
