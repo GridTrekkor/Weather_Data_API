@@ -19,6 +19,7 @@ app.controller('MonthViewController', function ($http, MenuTitle) {
 
         month.httpMonth = parseInt(month.monthInput);
         month.httpYear = month.yearInput;
+        month.showGraph = false;
         month.showSpinner = true;
 
         // update top nav title

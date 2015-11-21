@@ -24,8 +24,8 @@
     </md-content>
 
     <div id="chartAndTitle">
-        <div id="chartTitle">
-            <img class="spinner" ng-if="month.showSpinner" height="30" width="30" src="/images/default.gif" />
+        <img class="spinner" ng-if="month.showSpinner" height="30" width="30" src="/images/default.gif" />
+        <div ng-if="month.showGraph" id="chartTitle">
             {{ month.monthName }} {{ month.year }}
         </div>
 
