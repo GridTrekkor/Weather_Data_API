@@ -21,6 +21,7 @@ app.controller('MonthViewController', function ($http, MenuTitle) {
         month.httpYear = month.yearInput;
         month.showGraph = false;
         month.showSpinner = true;
+        $("#displayDay").hide();
 
         // update top nav title
         if (month.httpMonth && month.httpYear)  MenuTitle.updateTitle('Month View: ' + monthNames[month.httpMonth] + " " + month.httpYear);
